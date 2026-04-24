@@ -1,5 +1,7 @@
 /* style.css */
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 :root {
   --rosewater: #dc8a78;
   --flamingo:  #dd7878;
