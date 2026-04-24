@@ -212,13 +212,13 @@
     "spdx-license-ids": "^3.0.23",
     "stop-iteration-iterator": "^1.1.0",
     "string-width": "^5.1.2",
-    "string-width-cjs": "^4.2.3",
+    "string-width-cjs": "^5.1.1",
     "string.prototype.padend": "^3.1.6",
     "string.prototype.trim": "^1.2.10",
     "string.prototype.trimend": "^1.0.9",
     "string.prototype.trimstart": "^1.0.8",
     "strip-ansi": "^7.2.0",
-    "strip-ansi-cjs": "^6.0.1",
+    "strip-ansi-cjs": "^8.0.0",
     "strip-bom": "^3.0.0",
     "subarg": "^1.0.0",
     "sucrase": "^3.35.1",
@@ -246,9 +246,10 @@
     "which-collection": "^1.0.2",
     "which-typed-array": "^1.1.20",
     "wrap-ansi": "^8.1.0",
-    "wrap-ansi-cjs": "^7.0.0"
+    "wrap-ansi-cjs": "^8.0.0"
   },
   "devDependencies": {},
+  "packageManager": "npm@10.8.2",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
   "build": "npx @tailwindcss/cli -i ./src/css/input.css -o ./public/output.css --minify",
