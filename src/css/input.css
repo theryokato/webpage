@@ -78,7 +78,6 @@ h1, h2, h3, h4, h5, h6,
 /* Body: Serif (Merriweather) */
 p,
 li,
-.profile-tagline,
 .profile-bio,
 .project-desc,
 .detail-subtitle,
@@ -102,6 +101,7 @@ code, pre, kbd, samp, footer, span, a
 .back-link,
 .project-name,
 .back-link,
+.profile-tagline,
 .arrow,
 .cv-box {
   font-family: var(--font-mono);
