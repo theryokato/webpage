@@ -1,22 +1,26 @@
 <!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ryo Kato</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <link rel="stylesheet" href="style.css" />
   <script defer src="https://cloud.umami.is/script.js" data-website-id="6bb27ee2-3376-4412-b148-6e804afad4ca"></script>
 </head>
+
 <body>
 
   <header>
     <a href="/" class="header-name">Ryo Kato</a>
     <div class="cv-box">
-      <a href="/path.pdf" target="_blank">Download CV</a>
+      <a href="/assets/Ryo_Kato_CV.pdf" target="_blank">Download CV</a>
     </div>
     <ul class="nav-links">
       <!-- <li><a href="#work">work</a></li>
@@ -29,7 +33,8 @@
       <div class="profile">
         <div class="avatar-wrap"></div>
         <h1 class="profile-name">Ryo Kato</h1>
-        <p class="profile-tagline">Mechanical Engineering @ Texas A&M University</p>
+        <p class="profile-tagline">Mechanical Engineering @ Texas A&M University<br />Internal Vice President @ TURTLE
+          Robotics</p>
         <p class="profile-bio">
           Passionate about mobile robotics, control systems, and mechanical design.
         </p>
@@ -49,18 +54,11 @@
         </div>
       </div>
       <div class="projects-col" id="projects">
-        <p class="section-title">Experience/Projects</p>
+        <p class="section-title">Top Experiences/Projects</p>
         <div class="project-list">
-          <a href="projects/turtle.html" class="project">
-            <div class="project-left">
-              <span class="project-name color-yellow">Internal VP of TURTLE Robotics</span>
-              <span class="project-desc">Largest student-led robotics org in Texas</span>
-            </div>
-            <span class="project-arrow">→</span>
-          </a>
           <a href="projects/olsn.html" class="project">
             <div class="project-left">
-              <span class="project-name color-flamingo">OLSN</span>
+              <span class="project-name color-mauve">OLSN</span>
               <span class="project-desc">Myoelectric prosthetic hand for a local boy</span>
             </div>
             <span class="project-arrow">→</span>
@@ -79,13 +77,20 @@
             </div>
             <span class="project-arrow">→</span>
           </a>
-          <a href="https://github.com/theryokato/webpage" class="project">
+          <a href="projects/red.html" class="project">
+            <div class="project-left">
+              <span class="project-name color-peach">Elysium 2 Test Stand</span>
+              <span class="project-desc">Flame diverter for a 1500lbf liquid rocket engine</span>
+            </div>
+            <span class="project-arrow">→</span>
+          </a>
+          <!-- <a href="https://github.com/theryokato/webpage" class="project">
             <div class="project-left">
               <span class="project-name color-mauve">Portfolio Webpage</span>
               <span class="project-desc">Source on GitHub. Catppuccin Latte palette.</span>
             </div>
             <span class="project-arrow">→</span>
-          </a>
+          </a> -->
           <a href="https://docs.turtlerobotics.org/" class="project">
             <div class="project-left">
               <span class="project-name color-green">TURTLE Knowledge Base</span>
@@ -94,7 +99,13 @@
             <span class="project-arrow">→</span>
           </a>
         </div>
-      </div>
+    
+        <a href="projects/projects.html" class="view-all-link">
+        View all experiences/projects <span class="view-all-arrow">→</span>
+      </a>
+
+    </div>
+
     </div>
   </main>
   <footer>
@@ -115,7 +126,8 @@
     setInterval(updateClock, 1000);
   </script>
 
-   <script src="scripts/oneko.js"></script>
+  <script src="scripts/oneko.js"></script>
 
 </body>
+
 </html>

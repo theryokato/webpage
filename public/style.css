@@ -2,6 +2,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
 :root {
   --rosewater: #dc8a78;
   --flamingo:  #dd7878;
@@ -320,7 +322,6 @@ main {
   margin: 0 0 1.75rem;
 }
 
-.detail-body {}
 
 .detail-body h2 {
   font-family: 'IBM Plex Mono', monospace;
@@ -328,7 +329,7 @@ main {
   font-weight: 500;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--overlay0);
+  color: var(--text);
   margin-bottom: 0.65rem;
   margin-top: 1.75rem;
 }
@@ -336,7 +337,7 @@ main {
 
 .detail-body p {
   font-size: 0.88rem;
-  color: var(--subtext0);
+  color: var(--text);
   line-height: 1.75;
   margin-bottom: 0.75rem;
 }
@@ -348,7 +349,7 @@ main {
 }
 .detail-body ul li {
   font-size: 0.85rem;
-  color: var(--subtext0);
+  color: var(--text);
   padding-left: 1.1rem;
   position: relative;
   margin-bottom: 0.35rem;
@@ -357,13 +358,13 @@ main {
   content: '—';
   position: absolute;
   left: 0;
-  color: var(--surface2);
+  color: var(--text);
 }
 
 .detail-body img {
   width: 100%;
   border-radius: 8px;
-  border: 1px solid var(--surface0);
+  border: 1px solid var(--text);
   margin: 1rem 0;
 }
 
@@ -434,5 +435,37 @@ footer a:hover { color: var(--subtext0); }
   .container { grid-template-columns: 1fr; gap: 2.5rem; }
   .profile { align-items: center; text-align: center; }
   .social-row { justify-content: center; }
+}
+
+.view-all-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 1rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.78rem;
+  color: var(--yellow);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.view-all-link:hover {
+  color: var(--yellow);
+  border-bottom-color: currentColor;
+}
+.view-all-arrow {
+  transition: transform 0.15s;
+  color: var(--yellow);
+}
+.view-all-link:hover .view-all-arrow {
+  transform: translateX(3px);
+  color: var(--yellow );
+}
+
+.detail-image {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 8px;
+  margin: 1rem 0;
 }
 
