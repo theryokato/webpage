@@ -5,8 +5,8 @@
   "packageManager": "npm@10.8.2",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tailwindcss -i src/css/input.css -o public/output.css --minify",
-    "dev": "tailwindcss -i src/css/input.css -o public/output.css --watch",
+    "build": "npx @tailwindcss/cli -i src/css/input.css -o public/output.css --minify",
+    "dev": "npx @tailwindcss/cli -i src/css/input.css -o public/output.css --watch",
     "deploy": "wrangler deploy",
     "preview": "wrangler dev"
   },
@@ -14,13 +14,17 @@
   "author": "",
   "license": "All Rights Reserved (ARR)",
   "devDependencies": {
+    "@iconify/json": "^2.2.466",
+    "@iconify/tailwind4": "^1.2.3",
     "autoprefixer": "^10.5.0",
     "postcss": "^8.5.10",
-    "tailwindcss": "^3.4.19",
     "wrangler": "^4.85.0"
   },
   "dependencies": {
+    "@tailwindcss/cli": "^4.2.4",
     "flyonui": "^2.4.1",
-    "http-server": "^14.1.1"
+    "http-server": "^14.1.1",
+    "tailwindcss": "^4.2.4",
+    "theme-change": "^2.5.0"
   }
 }
