@@ -6,9 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TURTLE Knowledge Base – Ryo Kato</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-  <link rel="stylesheet" href="../style.css" />
+  <script>
+    const saved = localStorage.getItem('theme');
+    if (saved) document.documentElement.setAttribute('data-theme', saved);
+  </script>
+  <link rel="stylesheet" href="../output.css" />
 </head>
 <body>
   <header>
