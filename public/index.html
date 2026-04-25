@@ -1,4 +1,3 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,24 +11,16 @@
 </head>
 
 <body>
-
   <header>
     <a href="/" class="header-name">Ryo Kato</a>
     <div class="cv-box">
       <a href="/assets/Ryo_Kato_CV.pdf" target="_blank">Download CV</a>
     </div>
     <ul class="nav-links">
-      <!-- <li><a href="#work">work</a></li>
-      <li><a href="#projects">projects</a></li> -->
-
       <input type="checkbox" data-toggle-theme="dark,light" data-act-class="active" class="checkbox" />
-
-
-
     </ul>
-
-
   </header>
+
   <main>
     <div class="container">
       <div class="profile">
@@ -38,7 +29,7 @@
         <p class="profile-tagline">Mechanical Engineering @ Texas A&M University<br />Internal Vice President @ TURTLE
           Robotics</p>
         <p class="profile-bio">
-          Passionate about mobile robotics, control systems, and mechanical design.
+          Getting my hands dirty by making robots.<br>Worsening my posture by coding them.
         </p>
         <div class="social-row">
           <a href="https://www.linkedin.com/in/ryokato-texasam/" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
@@ -55,6 +46,7 @@
           <span class="stack-pill">Systems Engineering</span>
         </div>
       </div>
+
       <div class="projects-col" id="projects">
         <p class="section-title">Top Experiences/Projects</p>
         <div class="project-list">
@@ -86,13 +78,6 @@
             </div>
             <span class="project-arrow">→</span>
           </a>
-          <!-- <a href="https://github.com/theryokato/webpage" class="project">
-            <div class="project-left">
-              <span class="project-name color-mauve">Portfolio Webpage</span>
-              <span class="project-desc">Source on GitHub. Catppuccin Latte palette.</span>
-            </div>
-            <span class="project-arrow">→</span>
-          </a> -->
           <a href="https://docs.turtlerobotics.org/" class="project">
             <div class="project-left">
               <span class="project-name color-green">TURTLE Knowledge Base</span>
@@ -101,22 +86,43 @@
             <span class="project-arrow">→</span>
           </a>
         </div>
-
         <a href="projects/projects.html" class="view-all-link">
-          View all experiences/projects <span class="view-all-arrow">→</span>
+          view all experiences/projects <span class="view-all-arrow">→</span>
         </a>
-
       </div>
-
     </div>
   </main>
+
   <footer>
-    <span>© 2026 Ryo Kato</span>
+    <button class="footer-btn" id="openLegalModalBtn" data-umami-event="license">LICENSE</button>
     <span class="dot">•</span>
     <span><span id="clock"></span> local</span>
     <span class="dot">•</span>
-    <a href="https://github.com/theryokato/webpage" target="_blank" rel="noopener noreferrer">source</a>
+    <a href="https://github.com/theryokato/webpage" target="_blank" rel="noopener noreferrer">source code</a>
   </footer>
+
+  <!-- License & Copyright Modal -->
+  <div id="legalModal" class="flex hidden fixed inset-0 justify-center items-center text-sm"
+    style="background-color: var(--mantle)/100; backdrop-filter: blur(4px)">
+    <div class="relative p-6 w-full max-w-md rounded-lg shadow-xl style=" background-color: var(--mantle)">
+      <h2 class="mb-4 text-lg font-semibold">License & Copyright</h2>
+      &copy; Ryo Kato</span> 2026, under the following license. <br>
+
+        <ul style="list-style-type: '- ';">
+          <li>This website's <i>contents</i> are licensed under the <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.en" class="link2">CC BY-NC-ND 4.0</a> license.</li>
+          <li>This website's <em><a href="https://github.com/theryokato/webpage" class="link2">source code</a></em> is licensed under the <a href="https://choosealicense.com/licenses/agpl-3.0/" class="link2">GNU AGPLv3</a> license. Portions of the UI are inspired by and adapted from <a href="https://orangc.net/" class="link2">orangc</a> under the GNU AGPLv3 license.</li>
+        </ul>
+  
+    </div>
+    <script>
+      const legalModal = document.getElementById('legalModal');
+      document.getElementById('openLegalModalBtn').addEventListener('click', () => { legalModal.classList.remove('hidden'); });
+      window.addEventListener('click', (event) => { if (event.target === legalModal) { legalModal.classList.add('hidden'); } });
+    </script>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/flyonui@1/flyonui.js"></script>
+
   <script>
     function updateClock() {
       const now = new Date();
@@ -127,10 +133,9 @@
     updateClock();
     setInterval(updateClock, 1000);
   </script>
-
   <script src="scripts/oneko.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
-
+  <script src="https://cdn.jsdelivr.net/npm/flyonui@1/flyonui.js"></script>
 </body>
 
 </html>

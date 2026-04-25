@@ -1,6 +1,7 @@
 <!-- projects/herc.html -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,6 +14,7 @@
   </script>
   <link rel="stylesheet" href="../output.css" />
 </head>
+
 <body>
   <header>
     <a href="/" class="header-name">Ryo Kato</a>
@@ -44,10 +46,12 @@
       <div class="detail-body">
         <h2>Overview</h2>
         <p>
-          The TURTLE knowledge base is designed to provide a supplimentary resource for TURTLE Robotics members and anyone interested in robotics. It contains documentation on the common tools, software, and hardware used in our projects.
+          The TURTLE knowledge base is designed to provide a supplimentary resource for TURTLE Robotics members and
+          anyone interested in robotics. It contains documentation on the common tools, software, and hardware used in
+          our projects.
         </p>
         <img src="../assets/images/herc-preview.png" alt="HERC Lab exoskeleton arm"
-             onerror="this.style.display='none'" />
+          onerror="this.style.display='none'" />
         <h2>Technical Details</h2>
         <ul>
           <li>a</li>
@@ -63,12 +67,40 @@
     </div>
   </main>
   <footer>
-    <span>© 2025 Ryo Kato</span>
+    <button class="footer-btn" id="openLegalModalBtn" data-umami-event="license">LICENSE</button>
     <span class="dot">•</span>
     <span><span id="clock"></span> local</span>
     <span class="dot">•</span>
-    <a href="https://github.com/theryokato/webpage" target="_blank" rel="noopener noreferrer">source</a>
+    <a href="https://github.com/theryokato/webpage" target="_blank" rel="noopener noreferrer">source code</a>
   </footer>
+
+  <!-- License & Copyright Modal -->
+  <div id="legalModal" class="flex hidden fixed inset-0 justify-center items-center text-sm"
+    style="background-color: var(--mantle)/100; backdrop-filter: blur(4px)">
+    <div class="relative p-6 w-full max-w-md rounded-lg shadow-xl style=" background-color: var(--mantle)">
+      <h2 class="mb-4 text-lg font-semibold">License & Copyright</h2>
+      &copy; Ryo Kato</span> 2026, under the following license. <br>
+
+      <ul style="list-style-type: '- ';">
+        <li>This website's <i>contents</i> are licensed under the <a
+            href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.en" class="link2">CC BY-NC-ND 4.0</a> license.
+        </li>
+        <li>This website's <em><a href="https://github.com/theryokato/webpage" class="link2">source code</a></em> is
+          licensed under the <a href="https://choosealicense.com/licenses/agpl-3.0/" class="link2">GNU AGPLv3</a>
+          license. Portions of the UI are inspired by and adapted from <a href="https://orangc.net/"
+            class="link2">orangc</a> under the GNU AGPLv3 license.</li>
+      </ul>
+
+    </div>
+    <script>
+      const legalModal = document.getElementById('legalModal');
+      document.getElementById('openLegalModalBtn').addEventListener('click', () => { legalModal.classList.remove('hidden'); });
+      window.addEventListener('click', (event) => { if (event.target === legalModal) { legalModal.classList.add('hidden'); } });
+    </script>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/flyonui@1/flyonui.js"></script>
+
   <script>
     function updateClock() {
       const now = new Date();
@@ -79,5 +111,9 @@
     updateClock();
     setInterval(updateClock, 1000);
   </script>
+  <script src="scripts/oneko.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flyonui@1/flyonui.js"></script>
 </body>
+
 </html>

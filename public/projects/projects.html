@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,50 +17,65 @@
 
     /* ── Typography ── */
 
-/* Headings: Sans (Montserrat) */
-h1, h2, h3, h4, h5, h6,
-.profile-name,
-.project-name,
-.detail-title,
-.header-name,
-.section-title,
-.detail-body h2,
-.card-title,
-.projects-hero h1 {
-  font-family: var(--font-sans);
-}
+    /* Headings: Sans (Montserrat) */
+    a,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    .profile-name,
+    .detail-title,
+    .header-name,
+    .section-title,
+    .detail-body h2,
+    .card-title,
+    .projects-hero h1 {
+      font-family: var(--font-sans);
+    }
 
-/* Body: Serif (Merriweather) */
-body,
-p,
-a,
-li,
-span,
-.profile-tagline,
-.profile-bio,
-.project-desc,
-.detail-subtitle,
-.detail-body p,
-.detail-body li,
-.nav-links,
-.social-row,
-.stack-pill,
-.detail-tag,
-.detail-btn,
-.back-link,
-.view-all-link,
-.card-subtitle,
-.card-desc,
-.projects-hero p,
-footer {
-  font-family: var(--font-serif);
-}
+    /* Body: Serif (Merriweather) */
+    p,
+    li,
+    .profile-tagline,
+    .profile-bio,
+    .project-desc,
+    .detail-subtitle,
+    .detail-body p,
+    .detail-body li,
+    .nav-links,
+    .social-row,
+    .stack-pill,
+    .detail-tag,
+    .detail-btn,
+    .view-all-link,
+    .card-subtitle,
+    .card-desc,
+    .projects-hero p,
+    body {
+      font-family: var(--font-serif);
+    }
 
-code, pre, kbd, samp,
-#clock,
-.cv-box {
-  font-family: var(--font-mono);
-}
+    code,
+    pre,
+    kbd,
+    samp,
+    footer,
+    span #clock,
+    .back-link,
+    .project-name,
+    .cv-box {
+      font-family: var(--font-mono);
+    }
+
+    input,
+    textarea,
+    button,
+    select {
+      font-family: var(--font-sans);
+    }
+
     .card-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -167,7 +183,7 @@ code, pre, kbd, samp,
     <section class="projects-hero">
       <a href="/" class="back-link"><i class="fas fa-arrow-left"></i> back to home</a>
       <h1>Projects &amp; Experiences</h1>
-      <p>What I have been keeping myself busy with</p>
+      <p>I like to keep myself busy</p>
     </section>
 
     <div class="card-grid">
@@ -179,17 +195,20 @@ code, pre, kbd, samp,
         <div class="card-body">
           <h2 class="card-title">Internal VP of TURTLE Robotics</h2>
           <p class="card-subtitle">Aug 2024 – Present</p>
-          <p class="card-desc">Overseeing internal operations of the largest student-led robotics organization in Texas.</p>
+          <p class="card-desc">Overseeing internal operations of the largest student-led robotics organization in Texas.
+          </p>
           <span class="card-arrow">→</span>
         </div>
       </a>
 
       <!-- Portfolio Webpage -->
-      <a href="https://github.com/theryokato/webpage" target="_blank" rel="noopener noreferrer" class="project-card color-mauve">
+      <a href="https://github.com/theryokato/webpage" target="_blank" rel="noopener noreferrer"
+        class="project-card color-mauve">
         <div class="card-body">
           <h2 class="card-title">Portfolio Webpage</h2>
           <p class="card-subtitle">Apr 2024 – Present</p>
-          <p class="card-desc">This website. Built with TailwindCSS. Hosted on Cloudflare Pages. Uses Umami for analytics. Catppuccin color theme.</p>
+          <p class="card-desc">This website. Built with TailwindCSS. Hosted on Cloudflare Pages. Uses Umami for
+            analytics. Catppuccin color theme.</p>
           <span class="card-ext"><i class="fas fa-external-link-alt"></i> source code</span>
           <span class="card-arrow">→</span>
         </div>
@@ -203,7 +222,8 @@ code, pre, kbd, samp,
         <div class="card-body">
           <h2 class="card-title">Self-balancing Rovers (BLNC)</h2>
           <p class="card-subtitle">Aug 2025 – Dec 2025</p>
-          <p class="card-desc">Developing inverted-pendulum self-balancing rovers capable of transporting payloads across varied terrain.</p>
+          <p class="card-desc">Developing inverted-pendulum self-balancing rovers capable of transporting payloads
+            across varied terrain.</p>
           <span class="card-arrow">→</span>
         </div>
       </a>
@@ -216,7 +236,8 @@ code, pre, kbd, samp,
         <div class="card-body">
           <h2 class="card-title">Team Myotronic</h2>
           <p class="card-subtitle">Jan 2026</p>
-          <p class="card-desc">48-hour intensive biomedical engineering design competition. Developed a business model using a lower exoskeleton for rehabilitation assistance for post-op patients with muscle atrophy.</p>
+          <p class="card-desc">48-hour intensive biomedical engineering design competition. Developed a business model
+            using a lower exoskeleton for rehabilitation assistance for post-op patients with muscle atrophy.</p>
           <span class="card-arrow">→</span>
         </div>
       </a>
@@ -226,7 +247,8 @@ code, pre, kbd, samp,
         <div class="card-body">
           <h2 class="card-title">OLSN</h2>
           <p class="card-subtitle">Jan 2026 – Present</p>
-          <p class="card-desc">Myoelectric prosthetic hand designed and built for a local boy. Working on embedded software for EMG signal driven motor control.</p>
+          <p class="card-desc">Myoelectric prosthetic hand designed and built for a local boy. Working on embedded
+            software for EMG signal driven motor control.</p>
           <span class="card-arrow">→</span>
         </div>
       </a>
@@ -239,7 +261,8 @@ code, pre, kbd, samp,
         <div class="card-body">
           <h2 class="card-title">Disaster Response Observation Network (DRON)</h2>
           <p class="card-subtitle">Jan 2025 – Present</p>
-          <p class="card-desc">Mechanical systems lead.<br><br>Leveraging UAVs to gather intelligence during structural fires and aide first responders in scene assessment.</p>
+          <p class="card-desc">Mechanical systems lead.<br><br>Leveraging UAVs to gather intelligence during structural
+            fires and aide first responders in scene assessment.</p>
           <span class="card-arrow">→</span>
         </div>
       </a>
@@ -265,7 +288,8 @@ code, pre, kbd, samp,
       </a>
 
       <!-- TURTLE Knowledge Base -->
-      <a href="https://docs.turtlerobotics.org/" target="_blank" rel="noopener noreferrer" class="project-card color-green">
+      <a href="https://docs.turtlerobotics.org/" target="_blank" rel="noopener noreferrer"
+        class="project-card color-green">
         <figure>
           <img src="../assets/knowledgebase-logo.png" alt="Knowledge Base" class="card-img bg-dark" />
         </figure>
@@ -281,16 +305,53 @@ code, pre, kbd, samp,
   </main>
 
   <footer>
-    <span>© 2026 Ryo Kato</span>
+    <button class="footer-btn" id="openLegalModalBtn" data-umami-event="license">LICENSE</button>
     <span class="dot">•</span>
     <span><span id="clock"></span> local</span>
     <span class="dot">•</span>
-    <a href="https://github.com/theryokato/webpage" target="_blank" rel="noopener noreferrer">source</a>
+    <a href="https://github.com/theryokato/webpage" target="_blank" rel="noopener noreferrer">source code</a>
   </footer>
 
+  <!-- License & Copyright Modal -->
+  <div id="legalModal" class="flex hidden fixed inset-0 justify-center items-center text-sm"
+    style="background-color: var(--mantle)/100; backdrop-filter: blur(4px)">
+    <div class="relative p-6 w-full max-w-md rounded-lg shadow-xl style=" background-color: var(--mantle)">
+      <h2 class="mb-4 text-lg font-semibold">License & Copyright</h2>
+      &copy; Ryo Kato</span> 2026, under the following license. <br>
+
+      <ul style="list-style-type: '- ';">
+        <li>This website's <i>contents</i> are licensed under the <a
+            href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.en" class="link2">CC BY-NC-ND 4.0</a> license.
+        </li>
+        <li>This website's <em><a href="https://github.com/theryokato/webpage" class="link2">source code</a></em> is
+          licensed under the <a href="https://choosealicense.com/licenses/agpl-3.0/" class="link2">GNU AGPLv3</a>
+          license. Portions of the UI are inspired by and adapted from <a href="https://orangc.net/"
+            class="link2">orangc</a> under the GNU AGPLv3 license.</li>
+      </ul>
+
+    </div>
+    <script>
+      const legalModal = document.getElementById('legalModal');
+      document.getElementById('openLegalModalBtn').addEventListener('click', () => { legalModal.classList.remove('hidden'); });
+      window.addEventListener('click', (event) => { if (event.target === legalModal) { legalModal.classList.add('hidden'); } });
+    </script>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/flyonui@1/flyonui.js"></script>
+
   <script>
-    !function(){const c=document.getElementById('clock');if(!c)return;const u=()=>{const n=new Date();c.textContent=String(n.getHours()).padStart(2,'0')+':'+String(n.getMinutes()).padStart(2,'0')};u();setInterval(u,1e3)}();
+    function updateClock() {
+      const now = new Date();
+      const h = String(now.getHours()).padStart(2, '0');
+      const m = String(now.getMinutes()).padStart(2, '0');
+      document.getElementById('clock').textContent = h + ':' + m;
+    }
+    updateClock();
+    setInterval(updateClock, 1000);
   </script>
-  <script src="../scripts/oneko.js"></script>
+  <script src="scripts/oneko.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flyonui@1/flyonui.js"></script>
 </body>
+
 </html>

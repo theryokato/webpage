@@ -76,9 +76,7 @@ h1, h2, h3, h4, h5, h6,
 }
 
 /* Body: Serif (Merriweather) */
-body,
 p,
-a,
 li,
 .profile-tagline,
 .profile-bio,
@@ -95,15 +93,16 @@ li,
 .card-subtitle,
 .card-desc,
 .projects-hero p,
-footer {
+body {
   font-family: var(--font-serif);
 }
 
-code, pre, kbd, samp,
+code, pre, kbd, samp, footer, span, a
 #clock,
 .back-link,
-span,
 .project-name,
+.back-link,
+.arrow,
 .cv-box {
   font-family: var(--font-mono);
 }
@@ -130,7 +129,7 @@ a {
   text-decoration: none;
   transition: color 0.2s, transform 0.2s, background 0.2s, border-color 0.2s;
 }
-a:hover { color: var(--lavender); }
+a:hover { color: var(--yellow); }
 
 /* ── Header ── */
 header {
@@ -259,7 +258,7 @@ main {
 
 .project-name {
   font-size: 0.85rem;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--subtext1);
 }
 
@@ -288,11 +287,11 @@ main {
   gap: 0.35rem;
   margin-top: 1rem;
   font-size: 0.78rem;
-  color: var(--text);
+  color: var(--yellow);
   border-bottom: 1px solid currentColor;
 }
 .view-all-link:hover .view-all-arrow { transform: translateX(3px); }
-.view-all-arrow { color: var(--text); transition: transform 0.15s; }
+.view-all-arrow { color: var(--yellow); transition: transform 0.15s; }
 
 /* ── Detail Page ── */
 .detail-page { max-width: 640px; width: 100%; }
@@ -457,6 +456,90 @@ footer a:hover { color: var(--text); }
   margin: 0;
 }
 
+/* ── Footer Button ── */
+.footer-btn {
+  background: none;
+  border: none;
+  color: var(--subtext0);
+  font-family: var(--font-serif);
+  font-size: 0.78rem;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.2s;
+}
+.footer-btn:hover {
+  color: var(--text);
+}
+
+/* ── Footer Button ── */
+.footer-btn {
+  background: none;
+  border: none;
+  color: var(--subtext0);
+  font-family: var(--font-serif);
+  font-size: 0.78rem;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.2s;
+}
+.footer-btn:hover {
+  color: var(--text);
+}
+
+/* ── Modal ── */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+.modal.hidden { display: none; }
+
+.modal-box {
+  background: var(--mantle);
+  border: 1px solid var(--surface0);
+  border-radius: 10px;
+  padding: 1.5rem;
+  max-width: 360px;
+  width: 90%;
+}
+
+.modal-box h3 {
+  margin: 0 0 0.75rem;
+  font-size: 1rem;
+  color: var(--text);
+}
+
+.modal-box p {
+  margin: 0 0 0.75rem;
+  font-size: 0.85rem;
+}
+
+.modal-box .license-name { color: var(--lavender); }
+
+.modal-box ul {
+  list-style: disc;
+  padding-left: 1.25rem;
+  margin: 0 0 1rem;
+  font-size: 0.8rem;
+  color: var(--subtext1);
+}
+
+.modal-box li { margin-bottom: 0.35rem; }
+
+.modal-box button {
+  background: var(--surface0);
+  border: none;
+  color: var(--text);
+  padding: 0.4rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+.modal-box button:hover { background: var(--surface1); }
 
 @media (max-width: 700px) {
   header { padding: 1rem 1.5rem; }
