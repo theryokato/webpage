@@ -5,7 +5,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>OLSN – Ryo Kato</title>
+  <title>Myotronic – Ryo Kato</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <script>
@@ -15,14 +15,16 @@
   <link rel="stylesheet" href="../output.css" />
 </head>
 
+<script src="../scripts/zoom.js" defer></script>
+
 <body>
   <div data-include="../scripts/header.html"></div>
   <main>
     <div class="detail-page">
       <a href="/" class="back-link"><span class="arrow">←</span> back to home</a>
       <div class="detail-header">
-        <h1 class="detail-title color-flamingo">OLSN</h1>
-        <p class="detail-subtitle">Myoelectric prosthetic hand for a local boy</p>
+        <h1 class="detail-title color-sky">Myotronic</h1>
+        <p class="detail-subtitle">MedXplore Biomedical Competition 2026</p>
         <div class="detail-meta">
           <span class="detail-tag">Research</span>
           <span class="detail-tag">Embedded Software</span>
@@ -30,44 +32,30 @@
           <span class="detail-tag">Machine Learning</span>
           <span class="detail-tag">Motor Control</span>
         </div>
-        <div class="detail-links">
-          <a href="https://www.turtlerobotics.org/projects/olsn" class="detail-btn" target="_blank" rel="noopener">
+        <!-- <div class="detail-links">
+          <a href="https://www.turtlerobotics.org/projects/dron" class="detail-btn" target="_blank" rel="noopener">
             <i class="fas fa-external-link-alt"></i> project website
           </a>
-        </div>
+        </div> -->
       </div>
       <hr class="detail-divider" />
       <div class="detail-body">
         <h2>Overview</h2>
         <p>
-          Undeaaa
+          The Disaster Response Observation Network (DRON) is a proof-of-concept initiative that aims to leverage
+          unmanned aerial vehicles (UAVs) to gather intelligence during structural fires to aide first responders in
+          their scene assessment and emergency response.
         </p>
 
-        <div data-carousel='{
+               <div data-carousel='{
     "loadingClasses": "opacity-0",
     "dotsItemClasses": "carousel-box bg-[var(--overlay0)] carousel-active:bg-[var(--overlay2)]",
     "isAutoPlay": true,
     "speed": 2000
   }' class="relative" style="max-width: 600px; margin: 1rem 0; overflow: hidden;">
           <div class="carousel h-80">
-            <div class="carousel-body h-full opacity-0">
-              <div class="carousel-slide">
-                <div class="flex h-full justify-center p-6" style="background-color: var(--base);">
-                  <img src="../assets/OLSN/Spring26_OLSN-ProjectShowcase.pptx.svg" alt="Diagram" class="detail-image" />
-                </div>
-              </div>
-              <!-- <div class="carousel-slide active">
-                <div class="flex h-full justify-center p-6" style="background-color: var(--base);">
-                  <video controls class="detail-image">
-                    <source src="../assets/drone-flight.mp4" type="video/mp4">
-                  </video>
-                </div>
-              </div>
-              <div class="carousel-slide">
-                <div class="flex h-full justify-center p-6" style="background-color: var(--base);">
-                  <span class="self-center text-2xl sm:text-4xl">Third slide</span>
-                </div>
-              </div> -->
+            <div class="carousel-body h-full opacity-0" id="carousel-slides">
+              <!-- Slides injected by JS -->
             </div>
           </div>
           <button type="button"
@@ -95,14 +83,48 @@
           <li>Caa</li>
         </ul>
         <h2>Impact</h2>
-        <p>
-          Caaaa contrubtion
-        </p>
+        <ul>
+          <li>Directing a team of 5 engineers to develop a robust and modular 3D printed mechanical design of an
+            autonomous drone swarm for disaster response</li>
+          <li>Developing custom airframes in SolidWorks, fabricated in-house using 3D printing, incorporating carbon
+            fiber tubes, and integrating electronics and novel sensors</li>
+          <li>Initiated an iterative 3D printing prototyping process to rapidly incorporate learned improvements,
+            resulting in a collaborative agile design cycle</li>
+        </ul>
       </div>
     </div>
   </main>
   <div data-include="../scripts/footer.html"></div>
   <script src="../scripts/loader.js"></script>
+
+<script>
+  function initCarousel() {
+    const container = document.getElementById('carousel-slides');
+    if (!container) {
+      // DOM not ready yet, retry
+      setTimeout(initCarousel, 50);
+      return;
+    }
+    fetch('../assets/MyoTronic Presentation/slides.json')
+      .then(res => res.json())
+      .then(images => {
+        images.forEach((filename, i) => {
+          const slide = document.createElement('div');
+          slide.className = 'carousel-slide' + (i === 0 ? ' active' : '');
+          slide.innerHTML = `
+            <div class="flex h-full items-center justify-center p-6" style="background-color: var(--base);">
+              <img src="../assets/MyoTronic Presentation/${filename}" alt="${filename}" style="max-height: 100%; max-width: 100%; object-fit: contain;" />
+            </div>
+          `;
+          container.appendChild(slide);
+        });
+        if (typeof HSStaticMethods !== 'undefined') {
+          HSStaticMethods.autoInit(['carousel']);
+        }
+      });
+  }
+  initCarousel();
+</script>
 </body>
 
 </html>

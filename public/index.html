@@ -11,16 +11,7 @@
 </head>
 
 <body>
-  <header>
-    <a href="/" class="header-name">Ryo Kato</a>
-    <div class="cv-box">
-      <a href="/assets/Ryo_Kato_CV.pdf" target="_blank">Download CV</a>
-    </div>
-    <ul class="nav-links">
-      <input type="checkbox" data-toggle-theme="dark,light" data-act-class="active" class="checkbox" />
-    </ul>
-  </header>
-
+  <div data-include="scripts/header.html"></div>
   <main>
     <div class="container">
       <div class="profile">
@@ -32,9 +23,11 @@
           Getting my hands dirty by making robots.<br>Worsening my posture by coding them.
         </p>
         <div class="social-row">
-          <a href="https://www.linkedin.com/in/ryokato-texasam/" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-          <a href="https://github.com/theryokato" title="GitHub"><i class="fab fa-github"></i></a>
-          <a href="mailto:ryokato@tamu.edu" title="Email"><i class="fas fa-envelope"></i></a>
+          <a href="https://www.linkedin.com/in/ryokato-texasam/" title="LinkedIn" data-name="/in/ryokato-texasam"><i
+              class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/theryokato" title="GitHub" data-name="theryokato"><i class="fab fa-github"></i></a>
+          <a href="https://www.instagram.com/_ryo_kato/" title="Instagram" data-name="_ryo_kato"><i class="fab fa-instagram"></i></a>
+          <a href="mailto:ryokato@tamu.edu" title="Email" data-name="ryokato@tamu.edu"><i class="fas fa-envelope"></i></a>
         </div>
         <div class="stack-row">
           <span class="stack-pill">Python</span>
@@ -93,49 +86,10 @@
     </div>
   </main>
 
-  <footer>
-    <button class="footer-btn" id="openLegalModalBtn" data-umami-event="license">LICENSE</button>
-    <span class="dot">•</span>
-    <span><span id="clock"></span> local</span>
-    <span class="dot">•</span>
-    <a href="https://github.com/theryokato/webpage" target="_blank" rel="noopener noreferrer">source code</a>
-  </footer>
+  <div data-include="scripts/footer.html"></div>
 
-  <!-- License & Copyright Modal -->
-  <div id="legalModal" class="flex hidden fixed inset-0 justify-center items-center text-sm"
-    style="background-color: var(--mantle)/100; backdrop-filter: blur(4px)">
-    <div class="relative p-6 w-full max-w-md rounded-lg shadow-xl style=" background-color: var(--mantle)">
-      <h2 class="mb-4 text-lg font-semibold">License & Copyright</h2>
-      &copy; Ryo Kato</span> 2026, under the following license. <br>
-
-        <ul style="list-style-type: '- ';">
-          <li>This website's <i>contents</i> are licensed under the <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.en" class="link2">CC BY-NC-ND 4.0</a> license.</li>
-          <li>This website's <em><a href="https://github.com/theryokato/webpage" class="link2">source code</a></em> is licensed under the <a href="https://choosealicense.com/licenses/agpl-3.0/" class="link2">GNU AGPLv3</a> license. Portions of the UI are inspired by and adapted from <a href="https://orangc.net/" class="link2">orangc</a> under the GNU AGPLv3 license.</li>
-        </ul>
-  
-    </div>
-    <script>
-      const legalModal = document.getElementById('legalModal');
-      document.getElementById('openLegalModalBtn').addEventListener('click', () => { legalModal.classList.remove('hidden'); });
-      window.addEventListener('click', (event) => { if (event.target === legalModal) { legalModal.classList.add('hidden'); } });
-    </script>
-  </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/flyonui@1/flyonui.js"></script>
-
-  <script>
-    function updateClock() {
-      const now = new Date();
-      const h = String(now.getHours()).padStart(2, '0');
-      const m = String(now.getMinutes()).padStart(2, '0');
-      document.getElementById('clock').textContent = h + ':' + m;
-    }
-    updateClock();
-    setInterval(updateClock, 1000);
-  </script>
-  <script src="scripts/oneko.js"></script>
+  <script src="scripts/loader.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/flyonui@1/flyonui.js"></script>
 </body>
 
 </html>

@@ -107,7 +107,7 @@
     }
 
     .card-img {
-      max-height: 150px;
+      max-height: 200px;
       width: 100%;
       object-fit: cover;
     }
@@ -169,15 +169,7 @@
 </head>
 
 <body>
-  <header>
-    <a href="/" class="header-name">Ryo Kato</a>
-    <div class="cv-box">
-      <a href="/assets/Ryo_Kato_CV.pdf" target="_blank">Download CV</a>
-    </div>
-    <ul class="nav-links">
-      <li><a href="mailto:ryokato@tamu.edu">contact</a></li>
-    </ul>
-  </header>
+ <div data-include="../scripts/header.html"></div>
 
   <main class="main-flat">
     <section class="projects-hero">
@@ -190,7 +182,7 @@
       <!-- TURTLE Robotics -->
       <a href="turtle.html" class="project-card color-yellow">
         <figure>
-          <img src="../assets/white_logo.png" alt="TURTLE logo" class="card-img bg-dark" />
+          <img src="../assets/turtle-card.png" alt="TURTLE" class="card-img bg-dark" />
         </figure>
         <div class="card-body">
           <h2 class="card-title">Internal VP of TURTLE Robotics</h2>
@@ -207,7 +199,7 @@
         <div class="card-body">
           <h2 class="card-title">Portfolio Webpage</h2>
           <p class="card-subtitle">Apr 2024 – Present</p>
-          <p class="card-desc">This website. Built with TailwindCSS. Hosted on Cloudflare Pages. Uses Umami for
+          <p class="card-desc">This website. <br><br>Built with TailwindCSS. Hosted on Cloudflare Pages. Uses Umami for
             analytics. Catppuccin color theme.</p>
           <span class="card-ext"><i class="fas fa-external-link-alt"></i> source code</span>
           <span class="card-arrow">→</span>
@@ -217,7 +209,7 @@
       <!-- BLNC -->
       <a href="blnc.html" class="project-card color-red">
         <figure>
-          <img src="../assets/BLNC_IMG.jpg" alt="BLNC rover" class="card-img" />
+          <img src="../assets/BLNC/BLNC-Card.webp" alt="BLNC" class="card-img" />
         </figure>
         <div class="card-body">
           <h2 class="card-title">Self-balancing Rovers (BLNC)</h2>
@@ -229,9 +221,9 @@
       </a>
 
       <!-- MedXplore -->
-      <a class="project-card color-teal">
+      <a href="myotronic.html" class="project-card color-teal">
         <figure>
-          <img src="../assets/medxplore.jpg" alt="MedXplore" class="card-img" />
+          <img src="../assets/medxplore-card.jpg" alt="MedXplore" class="card-img" />
         </figure>
         <div class="card-body">
           <h2 class="card-title">Team Myotronic</h2>
@@ -279,6 +271,9 @@
 
       <!-- Elysium 2 -->
       <a href="red.html" class="project-card color-peach">
+        <figure>
+          <img src="../assets/RED_E2_STAND.png" alt="RED" class="card-img" />
+        </figure>
         <div class="card-body">
           <h2 class="card-title">Elysium 2 Test Stand</h2>
           <p class="card-subtitle">Feb 2025 – May 2026</p>
@@ -291,12 +286,12 @@
       <a href="https://docs.turtlerobotics.org/" target="_blank" rel="noopener noreferrer"
         class="project-card color-green">
         <figure>
-          <img src="../assets/knowledgebase-logo.png" alt="Knowledge Base" class="card-img bg-dark" />
+          <img src="../assets/knowledgebase-card.png" alt="Knowledge Base" class="card-img bg-dark" />
         </figure>
         <div class="card-body">
           <h2 class="card-title">TURTLE Knowledge Base</h2>
           <p class="card-subtitle">Aug 2025 – Present</p>
-          <p class="card-desc">An open-source knowledge base for the largest student-led robotics org in Texas.</p>
+          <p class="card-desc">An open-source knowledge base for the largest student-led robotics org in Texas. Contains documentation on the common tools, software, and hardware used in our projects.</p>
           <span class="card-ext"><i class="fas fa-external-link-alt"></i> docs.turtlerobotics.org</span>
           <span class="card-arrow">→</span>
         </div>
@@ -304,54 +299,8 @@
     </div>
   </main>
 
-  <footer>
-    <button class="footer-btn" id="openLegalModalBtn" data-umami-event="license">LICENSE</button>
-    <span class="dot">•</span>
-    <span><span id="clock"></span> local</span>
-    <span class="dot">•</span>
-    <a href="https://github.com/theryokato/webpage" target="_blank" rel="noopener noreferrer">source code</a>
-  </footer>
-
-  <!-- License & Copyright Modal -->
-  <div id="legalModal" class="flex hidden fixed inset-0 justify-center items-center text-sm"
-    style="background-color: var(--mantle)/100; backdrop-filter: blur(4px)">
-    <div class="relative p-6 w-full max-w-md rounded-lg shadow-xl style=" background-color: var(--mantle)">
-      <h2 class="mb-4 text-lg font-semibold">License & Copyright</h2>
-      &copy; Ryo Kato</span> 2026, under the following license. <br>
-
-      <ul style="list-style-type: '- ';">
-        <li>This website's <i>contents</i> are licensed under the <a
-            href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.en" class="link2">CC BY-NC-ND 4.0</a> license.
-        </li>
-        <li>This website's <em><a href="https://github.com/theryokato/webpage" class="link2">source code</a></em> is
-          licensed under the <a href="https://choosealicense.com/licenses/agpl-3.0/" class="link2">GNU AGPLv3</a>
-          license. Portions of the UI are inspired by and adapted from <a href="https://orangc.net/"
-            class="link2">orangc</a> under the GNU AGPLv3 license.</li>
-      </ul>
-
-    </div>
-    <script>
-      const legalModal = document.getElementById('legalModal');
-      document.getElementById('openLegalModalBtn').addEventListener('click', () => { legalModal.classList.remove('hidden'); });
-      window.addEventListener('click', (event) => { if (event.target === legalModal) { legalModal.classList.add('hidden'); } });
-    </script>
-  </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/flyonui@1/flyonui.js"></script>
-
-  <script>
-    function updateClock() {
-      const now = new Date();
-      const h = String(now.getHours()).padStart(2, '0');
-      const m = String(now.getMinutes()).padStart(2, '0');
-      document.getElementById('clock').textContent = h + ':' + m;
-    }
-    updateClock();
-    setInterval(updateClock, 1000);
-  </script>
-  <script src="scripts/oneko.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/flyonui@1/flyonui.js"></script>
+ <div data-include="../scripts/footer.html"></div>
+<script src="../scripts/loader.js"></script>
 </body>
 
 </html>
