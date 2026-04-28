@@ -64,19 +64,20 @@
 /* ── Typography ── */
 
 /* Headings: Sans (Montserrat) */
-h1, h2, h3, h4, h5, h6, figcaption,
+h1, h2, h3, h4, h5, h6,
 .profile-name,
 .detail-title,
 .header-name,
 .section-title,
 .detail-body h2,
-.card-title
+.card-title,
+.profile-tagline,
 .projects-hero h1 {
   font-family: var(--font-sans);
 }
 
 /* Body: Serif (Merriweather) */
-p, a,
+p, a,figcaption,
 li,
 .profile-bio,
 .project-desc,
@@ -100,7 +101,6 @@ code, pre, kbd, samp, footer, span, button,
 .project-name,
 .view-all-link,
 .back-link,
-.profile-tagline,
 .arrow,
 .nav-links,
 .cv-box {
@@ -129,10 +129,11 @@ a {
   text-decoration: none;
   transition: color 0.2s, transform 0.2s, background 0.2s, border-color 0.2s;
 }
-a:hover { color: var(--yellow); }
+a:hover { color: var(--lavender); }
 
 figcaption {
   text-align: center;
+  color: var(--subtext0)
 }   
 
 /* ── Header ── */
@@ -168,6 +169,18 @@ header {
   transition: background 0.2s;
 }
 .cv-box:hover { background: var(--crust); color: var(--lavender); }
+
+.header-contact {
+  position: absolute;
+  right: 0%;
+  transform: translateX(-50%);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--subtext1);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.header-contact:hover { color: var(--lavender); }
 
 .nav-links { display: flex; gap: 1.75rem; list-style: none; }
 .nav-links a { color: var(--subtext0); font-size: 0.85rem; font-weight: 500; }
@@ -299,7 +312,7 @@ main {
   border-bottom: 1px solid currentColor;
 }
 .view-all-link:hover .view-all-arrow { transform: translateX(3px); color:var(--lavender)}
-.view-all-arrow { color: var(--lavender); transition: transform 0.15s; }
+.view-all-arrow { color: var(--text); transition: transform 0.15s; }
 
 /* ── Detail Page ── */
 .detail-page { max-width: 640px; width: 100%; }
@@ -406,7 +419,7 @@ main {
   width: 100%;
   max-width: 600px;
   border-radius: 8px;
-  border: 1px solid var(--text);
+  border: 1px solid var(--overlay0);
   margin: 1rem 0;
 }
 
