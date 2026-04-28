@@ -1,11 +1,10 @@
-<!-- projects/herc.html -->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Myotronic – Ryo Kato</title>
+  <title>Team Myotronic – Ryo Kato</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <script>
@@ -23,7 +22,7 @@
     <div class="detail-page">
       <a href="/" class="back-link"><span class="arrow">←</span> back to home</a>
       <div class="detail-header">
-        <h1 class="detail-title color-sky">Myotronic</h1>
+        <h1 class="detail-title color-teal">Team Myotronic</h1>
         <p class="detail-subtitle">MedXplore Biomedical Competition 2026</p>
         <div class="detail-meta">
           <span class="detail-tag">Research</span>
@@ -32,11 +31,6 @@
           <span class="detail-tag">Machine Learning</span>
           <span class="detail-tag">Motor Control</span>
         </div>
-        <!-- <div class="detail-links">
-          <a href="https://www.turtlerobotics.org/projects/dron" class="detail-btn" target="_blank" rel="noopener">
-            <i class="fas fa-external-link-alt"></i> project website
-          </a>
-        </div> -->
       </div>
       <hr class="detail-divider" />
       <div class="detail-body">
@@ -47,15 +41,18 @@
           their scene assessment and emergency response.
         </p>
 
-               <div data-carousel='{
-    "loadingClasses": "opacity-0",
-    "dotsItemClasses": "carousel-box bg-[var(--overlay0)] carousel-active:bg-[var(--overlay2)]",
-    "isAutoPlay": true,
-    "speed": 2000
-  }' class="relative" style="max-width: 600px; margin: 1rem 0; overflow: hidden;">
+        <div data-carousel='{
+            "loadingClasses": "opacity-0",
+            "dotsItemClasses": "carousel-box bg-[var(--overlay0)] carousel-active:bg-[var(--overlay2)]",
+            "isAutoPlay": true,
+            "speed": 2000
+          }' class="relative" style="max-width: 600px; margin: 1rem 0; overflow: hidden;" id="carousel-progress">
           <div class="carousel h-80">
             <div class="carousel-body h-full opacity-0" id="carousel-slides">
               <!-- Slides injected by JS -->
+            </div>
+            <div class="carousel-pagination absolute end-0 start-0 top-0 justify-start space-x-0" id="carousel-pagination">
+              <!-- Pagination items injected by JS -->
             </div>
           </div>
           <button type="button"
@@ -70,10 +67,7 @@
             <span class="icon-[tabler--chevron-right] size-5"></span>
             <span class="sr-only">Next</span>
           </button>
-          <div class="carousel-pagination absolute bottom-3 end-0 start-0 flex justify-center gap-3"
-            style="--carousel-box-bg: var(--overlay0); --carousel-active-bg: var(--overlay2);"></div>
         </div>
-
 
         <h2>Technical Details</h2>
         <ul>
@@ -97,34 +91,46 @@
   <div data-include="../scripts/footer.html"></div>
   <script src="../scripts/loader.js"></script>
 
-<script>
-  function initCarousel() {
-    const container = document.getElementById('carousel-slides');
-    if (!container) {
-      // DOM not ready yet, retry
-      setTimeout(initCarousel, 50);
-      return;
-    }
-    fetch('../assets/MyoTronic Presentation/slides.json')
-      .then(res => res.json())
-      .then(images => {
-        images.forEach((filename, i) => {
-          const slide = document.createElement('div');
-          slide.className = 'carousel-slide' + (i === 0 ? ' active' : '');
-          slide.innerHTML = `
-            <div class="flex h-full items-center justify-center p-6" style="background-color: var(--base);">
-              <img src="../assets/MyoTronic Presentation/${filename}" alt="${filename}" style="max-height: 100%; max-width: 100%; object-fit: contain;" />
-            </div>
-          `;
-          container.appendChild(slide);
+  <script>
+    function initCarousel() {
+      const container = document.getElementById('carousel-slides');
+      if (!container) {
+        setTimeout(initCarousel, 50);
+        return;
+      }
+      fetch('../assets/MyoTronic Presentation/slides.json?v=' + Date.now())
+        .then(res => res.json())
+        .then(images => {
+          images.forEach((filename, i) => {
+            const slide = document.createElement('div');
+            slide.className = 'carousel-slide' + (i === 0 ? ' active' : '');
+            slide.innerHTML = `
+              <div class="flex h-full items-center justify-center p-6" style="background-color: var(--base);">
+                <img src="../assets/MyoTronic Presentation/${filename}" alt="${filename}" style="max-height: 100%; max-width: 100%; object-fit: contain;"/>
+              </div>
+            `;
+            container.appendChild(slide);
+          });
+
+          // Inject progress bar pagination
+          const pagination = document.getElementById('carousel-pagination');
+          if (pagination) {
+            images.forEach((_, i) => {
+              const span = document.createElement('span');
+              const fraction = `${i + 1}/${images.length}`;
+              span.className = 'carousel-pagination-item carousel-active:block carousel-active:bg-[var(--lavender)] hidden h-1';
+              span.style.width = `${((i + 1) / images.length) * 100}%`;
+              pagination.appendChild(span);
+            });
+          }
+
+          if (typeof HSStaticMethods !== 'undefined') {
+            HSStaticMethods.autoInit(['carousel']);
+          }
         });
-        if (typeof HSStaticMethods !== 'undefined') {
-          HSStaticMethods.autoInit(['carousel']);
-        }
-      });
-  }
-  initCarousel();
-</script>
+    }
+    initCarousel();
+  </script>
 </body>
 
 </html>
